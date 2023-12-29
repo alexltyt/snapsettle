@@ -3,7 +3,7 @@ import User from '../user';
 import Transaction from '../transaction';
 
 const UserList = () => {
-    const [numOfUsers, setNumOfUsers] = useState(5);
+    const [numOfUsers, setNumOfUsers] = useState();
     const [users, setUsers] = useState([]);
     const [updatedUsers, setUpdatedUsers] = useState([]);
     const [inputError, setInputError] = useState(false);
@@ -19,6 +19,10 @@ const UserList = () => {
     
     const createUsers = () => {
         let newUsers = [];
+        if (numOfUsers < 2) {
+            setAlertMessage('Please enter a number greater than 1');
+            return;
+        }
         for (let i = 0; i < numOfUsers; i++) {
             newUsers.push(new User(i, `User ${i}`, 0));
         }
@@ -203,6 +207,7 @@ const UserList = () => {
               <input 
                   type="number" 
                   value={numOfUsers} 
+                  placeholder='Enter number of users'
                   onChange={(e) => setNumOfUsers(e.target.value)} 
                   className=' h-10 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500 '
               />
@@ -290,12 +295,13 @@ const UserList = () => {
                 </div>
               </div>
               }
+              {finalTransactions.length>0 &&
               <div className='border-double border-indigo-600/75 m-2 rounded-3xl border-4 w-screen sm:w-fit mx-auto mt-8'>
                 <div className='m-2'>
                         <div className='flex flex-row justify-center '>
-                            <div className='w-24'>Payer ID</div>
+                            <div className='w-24'>Payer</div>
                             <div className='w-24'>Amount</div>
-                            <div className='w-24'>Receiver ID</div>
+                            <div className='w-24'>Receiver</div>
                         </div>
                 </div>
                 <div className='m-2'>
@@ -308,6 +314,7 @@ const UserList = () => {
                     ))}
                 </div>
               </div>
+              }
             </div>
         </div>
     );
