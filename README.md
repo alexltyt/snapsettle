@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# SnapSettle
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Access the tool here: [https://yourusername.github.io/snapsettle/](https://yourusername.github.io/snapsettle/)
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+SnapSettle is an innovative tool designed to simplify the process of settling bills and scores among groups, ideal for activities like poker games, group travel, dining, and more. It allows for quick and efficient calculation of who owes what to whom, ensuring fairness and transparency in financial settlements.
 
-### `npm start`
+## Main Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Dynamic User Creation**: Effortlessly add players with customizable names.
+- **Optimized Settlement Algorithm**: Minimizes the number of transactions needed for settling the total bill.
+- **Transaction Record**: Detailed transaction logs showing who needs to pay whom and how much.
+- **Adjustable Dividers**: Customize the scale of transaction amounts using a currency divider or custom divider, making your own house rule.
+- **Result Sorting**: Sort the final transactions by payer or receiver for easier analysis and comparison.
+- **User-Friendly Interface**: Simple and intuitive interface for entering scores and viewing results.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+### Adding Players
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Enter the number of players.
+- Click "Create Users" to generate user fields.
+- Input player names and their respective scores or bills.
 
-### `npm run build`
+### Settling Bills
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Click Add Divider button to show and input the divider.
+- Once all scores are entered, click "Confirm" to process the transactions.
+- The app calculates and displays who owes what to whom in a clear, organized manner.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Sorting and Resetting
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Transactions can be sorted by payer or receiver for easier viewing.
+- Use the "Reset" button
