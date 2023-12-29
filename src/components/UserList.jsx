@@ -71,11 +71,11 @@ const UserList = () => {
 
 
     const sortByPayer = () => {
-        setTransactions(transactions => [...transactions].sort((a, b) => a.payer.localeCompare(b.payer)));
+        setFinalTransactions(transactions => [...transactions].sort((a, b) => a.payer.localeCompare(b.payer)));
   };
 
     const sortByReceiver = () => {
-        setTransactions(transactions => [...transactions].sort((a, b) => a.receiver.localeCompare(b.receiver)));
+        setFinalTransactions(transactions => [...transactions].sort((a, b) => a.receiver.localeCompare(b.receiver)));
     };
 
     const swapShowDivider = () =>{
@@ -116,7 +116,7 @@ const UserList = () => {
         
         newTransactions.map(transaction => {
         transaction.amount = transaction.amount = parseFloat((transaction.amount / currencyDivider / customDivider).toFixed(2));
-        })
+        return transaction;})
         setFinalTransactions(newTransactions);
       };
 
@@ -199,13 +199,15 @@ const UserList = () => {
           </div>}
             </div>
             <p>Number of users</p>
-            <input 
-                type="number" 
-                value={numOfUsers} 
-                onChange={(e) => setNumOfUsers(e.target.value)} 
-                className=' h-10 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500'
-            />
-            <button onClick={createUsers} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Create Users</button>
+            <div className='flex flex-row justify-center gap-3'>
+              <input 
+                  type="number" 
+                  value={numOfUsers} 
+                  onChange={(e) => setNumOfUsers(e.target.value)} 
+                  className=' h-10 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500 '
+              />
+              <button onClick={createUsers} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Create Users</button>
+            </div>
             <div className='m-4'>
                 {users.map(user => (
                     <div key={user.id}>
@@ -263,8 +265,8 @@ const UserList = () => {
                   </div>
               </div>}
               {showDivider && 
-                <div className='flex flex-row justify-center m-6 border border-indigo-600 w-screen  sm:w-max rounded-xl mx-auto gap-3'>
-                <div className='flex flex-col m-2'>
+                <div className='flex flex-row justify-center m-6  border-indigo-600 w-screen  sm:w-max rounded-xl mx-auto gap-3'>
+                <div className='flex flex-col'>
                   <div>Currency Divider</div>
                   <div>
                   <input
@@ -288,22 +290,23 @@ const UserList = () => {
                 </div>
               </div>
               }
-              
-              <div className='m-4'>
-                      <div className='flex flex-row justify-center '>
-                          <div className='w-24'>Payer ID</div>
-                          <div className='w-24'>Amount</div>
-                          <div className='w-24'>Receiver ID</div>
-                      </div>
-              </div>
-              <div className=''>
-                  {finalTransactions.map((transaction, index) => (
-                      <div className='flex flex-row justify-center ' key={index}>
-                          <div className='w-24'>{transaction.payer}</div>
-                          <div className='w-24'>--{transaction.amount}--{'>'}</div>
-                          <div className='w-24'>{transaction.receiver}</div>
-                      </div>
-                  ))}
+              <div className='border-double border-indigo-600/75 m-2 rounded-3xl border-4 w-screen sm:w-fit mx-auto mt-8'>
+                <div className='m-2'>
+                        <div className='flex flex-row justify-center '>
+                            <div className='w-24'>Payer ID</div>
+                            <div className='w-24'>Amount</div>
+                            <div className='w-24'>Receiver ID</div>
+                        </div>
+                </div>
+                <div className='m-2'>
+                    {finalTransactions.map((transaction, index) => (
+                        <div className='flex flex-row justify-center ' key={index}>
+                            <div className='w-24'>{transaction.payer}</div>
+                            <div className='w-24'>--{transaction.amount}--{'>'}</div>
+                            <div className='w-24'>{transaction.receiver}</div>
+                        </div>
+                    ))}
+                </div>
               </div>
             </div>
         </div>
