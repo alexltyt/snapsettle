@@ -1,7 +1,7 @@
 # SnapSettle
 
-Access the tool here: [[https://yourusername.github.io/snapsettle/]([https://yourusername.github.io/snapsettle/](https://www.sunbathsoft.com/snapsettle/))
-](https://www.sunbathsoft.com/snapsettle/)
+Access SnapSettle here: [https://www.sunbathsoft.com/snapsettle/](https://www.sunbathsoft.com/snapsettle/))
+
 ## Introduction
 
 SnapSettle is an innovative tool designed to simplify the process of settling bills and scores among groups, ideal for activities like poker games, group travel, dining, and more. It allows for quick and efficient calculation of who owes what to whom, ensuring fairness and transparency in financial settlements.
