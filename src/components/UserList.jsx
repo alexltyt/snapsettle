@@ -151,10 +151,10 @@ const UserList = () => {
         
     return (
         <div className=''>
-            <h1 className='text-7xl m-8 font-extrabold italic mx-auto bg-gradient-to-r from-indigo-400 via-blue-500 to-indigo-400 inline-block text-transparent bg-clip-text'>SnapSettle</h1>
-            {inputError && <div
-            className="inline-flex ml-3 mb-4 overflow-hidden bg-white rounded-lg shadow-md"
-          >
+          <div className="bg-indigo-600 mb-4">
+            <h1 className='text-6xl m-8 it mx-auto text-white font-sriracha font-extrabold inline-block text-transparent bg-clip-text'>SnapSettle</h1>            
+          </div>
+            {inputError && <div className="inline-flex ml-3 mb-4 overflow-hidden bg-white rounded-lg shadow-md">
             <div className="flex items-center justify-center w-12 bg-red-500">
               <svg
                 classname="w-6 h-10 text-white fill-current"
@@ -202,7 +202,7 @@ const UserList = () => {
             </div>
           </div>}
             </div>
-            <p>Number of users</p>
+            <p className='tracking-wide'>Number of users</p>
             <div className='flex flex-row justify-center gap-3'>
               <input 
                   type="number" 
@@ -215,18 +215,18 @@ const UserList = () => {
             </div>
             <div className='m-4'>
                 {users.map(user => (
-                    <div key={user.id}>
+                    <div key={user.id} className=''>
                         <input
                             type="text"
                             value={user.name}
                             onChange={(e) => handleNameChange(user.id, e.target.value)}
-                            className='m-1 h-8 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500'
+                            className='m-1 h-8 border w-1/3 md:w-fit border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500'
                         />
                         <input
                             type="text"
                             value={user.billAmount}
                             onChange={(e) => handleBillAmountChange(user.id, e.target.value)}
-                            className={`{user.amountInputError ? 'border-red-500 border' : 'border'} m-1 h-8 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500`}
+                            className={`{user.amountInputError ? 'border-red-500 border' : 'border'} m-1 h-8 w-1/3 md:w-20 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500`}
                         />
                         {user.amountInputError && <div className="text-red-500">Invalid amount</div>}
                     </div>
@@ -235,7 +235,7 @@ const UserList = () => {
             <button onClick={confirmChanges} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Confirm</button>
             <br/>
             <div className='flex flex-col justify-center mx-auto mt-8'>
-              <div className='flex flex-row justify-center gap-3'>
+              <div className='flex flex-row justify-center gap-2'>
                   <button onClick={sortByPayer} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Payer</button>
                   <button onClick={sortByReceiver} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Receiver</button>
                   <button onClick={swapShowDivider} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Add Divider</button>
