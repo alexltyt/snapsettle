@@ -1,6 +1,6 @@
 # SnapSettle
 
-Access SnapSettle here: [https://www.sunbathsoft.com/snapsettle/](https://www.sunbathsoft.com/snapsettle/))
+Access SnapSettle here: [https://www.sunbathsoft.com/snapsettle/](https://www.sunbathsoft.com/snapsettle/)
 
 ## Introduction
 
