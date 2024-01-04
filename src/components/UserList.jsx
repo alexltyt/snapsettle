@@ -209,7 +209,7 @@ const UserList = () => {
                   value={numOfUsers} 
                   placeholder='Enter number of users'
                   onChange={(e) => setNumOfUsers(e.target.value)} 
-                  className=' h-10 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500 '
+                  className=' h-10 border md:w-1/5 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500 '
               />
               <button onClick={createUsers} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Create Users</button>
             </div>
@@ -235,11 +235,11 @@ const UserList = () => {
             <button onClick={confirmChanges} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Confirm</button>
             <br/>
             <div className='flex flex-col justify-center mx-auto mt-8'>
-              <div className='flex flex-row justify-center gap-2'>
-                  <button onClick={sortByPayer} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Payer</button>
-                  <button onClick={sortByReceiver} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Receiver</button>
-                  <button onClick={swapShowDivider} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Add Divider</button>
-                  <button onClick={resetApp} className='flex items-center px-2 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>
+              <div className='flex flex-row justify-center gap-2 mx-2'>
+                  <button onClick={sortByPayer} className='px-4 py-2 text-xs w-44 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Payer</button>
+                  <button onClick={sortByReceiver} className='px-4 py-2  text-xs w-44 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Receiver</button>
+                  <button onClick={swapShowDivider} className='px-4 py-2  text-xs w-44 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Add Divider</button>
+                  <button onClick={resetApp} className='flex items-center px-2  text-xs w-20 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>
                     <svg className="w-5 h-5 mx-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
                     </svg>
