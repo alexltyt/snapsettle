@@ -150,7 +150,7 @@ const UserList = () => {
 
         
     return (
-        <div className=''>
+        <div className='md:w-2/5 mx-auto bg-white h-screen'>
           <div className="bg-indigo-600 mb-4">
             <h1 className='text-6xl m-8 it mx-auto text-white font-sriracha font-extrabold inline-block text-transparent bg-clip-text'>SnapSettle</h1>            
           </div>
@@ -178,40 +178,44 @@ const UserList = () => {
           </div>}
             <div>
               {alertMessage && <div
-            className="inline-flex ml-3 mb-4 overflow-hidden bg-white rounded-lg shadow-md"
-          >
-            <div className="flex items-center justify-center w-12 bg-red-500">
-              <svg
-                className="w-6 h-10 text-white fill-current"
-                viewBox="0 0 40 40"
-                xmlns="http://www.w3.org/2000/svg"
+                className="inline-flex ml-3 mb-4 overflow-hidden bg-white rounded-lg shadow-md"
               >
-                <path
-                  d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z"
-                />
-              </svg>
-            </div>
+                <div className="flex items-center justify-center w-12 bg-red-500">
+                  <svg
+                    className="w-6 h-10 text-white fill-current"
+                    viewBox="0 0 40 40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z"
+                    />
+                  </svg>
+                </div>
 
-            <div className="px-4 py-0.5 -mx-3">
-              <div className="">
-                <span className="font-semibold text-red-500">Error</span>
-                <p className="text-xs text-gray-600">
-                  {alertMessage}
-                </p>
+                <div className="px-4 py-0.5 -mx-3">
+                  <div className="">
+                    <span className="font-semibold text-red-500">Error</span>
+                    <p className="text-xs text-gray-600">
+                      {alertMessage}
+                    </p>
+                  </div>
+                </div>
+              </div>}
+            </div>
+            <div className='flex flex-col w-4/5 mx-auto md:w-max md:mx-auto mb-10'>
+              <div className='mb-2'>
+                <p className='tracking-wide text-left'>Number of users</p>
               </div>
-            </div>
-          </div>}
-            </div>
-            <p className='tracking-wide'>Number of users</p>
-            <div className='flex flex-row justify-center gap-3'>
-              <input 
-                  type="number" 
-                  value={numOfUsers} 
-                  placeholder='Enter number of users'
-                  onChange={(e) => setNumOfUsers(e.target.value)} 
-                  className=' h-10 border md:w-1/5 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500 '
-              />
-              <button onClick={createUsers} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Create Users</button>
+              <div className='flex flex-row justify-around gap-3 h-8 w-max'>
+                <input 
+                    type="number" 
+                    value={numOfUsers} 
+                    placeholder='Enter number of users'
+                    onChange={(e) => setNumOfUsers(e.target.value)} 
+                    className=' border bg-gray-50 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500 '
+                />
+                <button onClick={createUsers} className='px-4 py-2  text-xs  text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>CreateUsers</button>
+              </div>
             </div>
             <div className='m-4'>
                 {users.map(user => (
@@ -220,32 +224,23 @@ const UserList = () => {
                             type="text"
                             value={user.name}
                             onChange={(e) => handleNameChange(user.id, e.target.value)}
-                            className='m-1 h-8 border w-1/3 md:w-fit border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500'
+                            className='m-1 h-8 border w-1/3 md:w-fit bg-gray-50 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500'
                         />
                         <input
                             type="text"
                             value={user.billAmount}
                             onChange={(e) => handleBillAmountChange(user.id, e.target.value)}
-                            className={`{user.amountInputError ? 'border-red-500 border' : 'border'} m-1 h-8 w-1/3 md:w-20 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500`}
+                            className={`{user.amountInputError ? 'border-red-500 border' : 'border'} m-1 bg-gray-50 h-8 w-1/3 md:w-20 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500`}
                         />
                         {user.amountInputError && <div className="text-red-500">Invalid amount</div>}
                     </div>
                 ))}
             </div>
-            <button onClick={confirmChanges} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Confirm</button>
+            <div className='flex flex-row justify-center gap-6'>
+              <button onClick={swapShowDivider} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Add Divider</button>
+             <button onClick={confirmChanges} className='px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Confirm</button>
+            </div>
             <br/>
-            <div className='flex flex-col justify-center mx-auto mt-8'>
-              <div className='flex flex-row justify-center gap-2 mx-2'>
-                  <button onClick={sortByPayer} className='px-4 py-2 text-xs w-44 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Payer</button>
-                  <button onClick={sortByReceiver} className='px-4 py-2  text-xs w-44 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Receiver</button>
-                  <button onClick={swapShowDivider} className='px-4 py-2  text-xs w-44 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Add Divider</button>
-                  <button onClick={resetApp} className='flex items-center px-2  text-xs w-20 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>
-                    <svg className="w-5 h-5 mx-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
-                    </svg>
-                    <span className="mx-1">Reset</span>
-                  </button>
-              </div>
               {dividerInputError && showDivider &&
                 <div className="inline-flex ml-3 mb-4 overflow-hidden bg-white rounded-lg shadow-md">
                   <div className="flex items-center justify-center w-12 bg-red-500">
@@ -270,7 +265,7 @@ const UserList = () => {
                   </div>
               </div>}
               {showDivider && 
-                <div className='flex flex-row justify-center m-6  border-indigo-600 w-screen  sm:w-max rounded-xl mx-auto gap-3'>
+                <div className='flex flex-row justify-center   border-indigo-600 w-screen  sm:w-max rounded-xl mx-auto gap-3'>
                 <div className='flex flex-col'>
                   <div>Currency Divider</div>
                   <div>
@@ -278,7 +273,7 @@ const UserList = () => {
                     type="text"
                     value={currencyDivider}
                     onChange={(e) => handleDividerInput('currencyDivider',e.target.value)}
-                    className={`{dividerInputError ? 'border-red-500 border' : 'border'} m-1 h-8 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500`}
+                    className={`{dividerInputError ? 'border-red-500 border' : 'border'} m-1 bg-gray-50 h-8 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500`}
                   />
                   </div>
                 </div>
@@ -289,12 +284,22 @@ const UserList = () => {
                     type="text"
                     value={customDivider}
                     onChange={(e) => handleDividerInput('customDivider',e.target.value)}
-                    className={`{dividerInputError ? 'border-red-500 border' : 'border'} m-1 h-8 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500`}
+                    className={`{dividerInputError ? 'border-red-500 border' : 'border'} m-1 bg-gray-50 h-8 border border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500`}
                   />
                   </div>
                 </div>
               </div>
               }
+            <div className='flex flex-col justify-center mx-auto mt-8'>
+              <div className='flex flex-row justify-center gap-2 mx-2'>
+                  <button onClick={sortByPayer} className='px-4 py-2 text-xs w-44 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Payer</button>
+                  <button onClick={sortByReceiver} className='px-4 py-2  text-xs w-44 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>Sort by Receiver</button>                  <button onClick={resetApp} className='flex items-center px-2  text-xs w-20 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'>
+                    <svg className="w-5 h-5 mx-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+                    </svg>
+                    <span className="mx-1">Reset</span>
+                  </button>
+              </div>
               {finalTransactions.length>0 &&
               <div className='border-double border-indigo-600/75 m-2 rounded-3xl border-4 w-screen sm:w-fit mx-auto mt-8'>
                 <div className='m-2'>
