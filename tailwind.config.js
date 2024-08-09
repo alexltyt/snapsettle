@@ -10,5 +10,10 @@ module.exports = {
       'rowdies': ['Rowdies', 'cursive'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui')
+  ],
+  daisyui: {
+    themes: ["retro"],
+  },
 }
